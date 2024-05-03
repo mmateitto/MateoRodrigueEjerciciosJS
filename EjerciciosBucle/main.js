@@ -56,15 +56,12 @@ if (esPrimo(ejercicio4)) {
 
 //Ejercicio 5
 let ejercicio5 = parseInt(prompt("ejercicio 5"));
-function divisiones(ejercicio5) {
-    for (let i = 1; i <= ejercicio5; i++) {
-        if (ejercicio5 % i === 0) {
-            console.log(i);
-        }
+console.log("Los divisores de", ejercicio5, "son:");
+for (let i = 1; i <= ejercicio5; i++) {
+    if (ejercicio5 % i === 0) {
+        console.log(i);
     }
 }
-console.log("Los divisores de", ejercicio5, "son:");
-divisiones(ejercicio5);
 
 //Ejercicio 6
 let array6 = ["casa", "plata", "finanzas", "estudios", "sociedad", "politica", "ciencia", "calentamiento global", "vinculos", "tecnologia"]
@@ -88,156 +85,123 @@ let array8 = [
     { nombre: "Lucia", edad: 23, relacion: "Hija del Medio", ocupacion: "Administrativa" },
     { nombre: "Daniela", edad: 13, relacion: "Hija Menor", ocupacion: "Estudiante" }
 ]
-
-function familia(array8) {
-    for (let i = 0; i < array8.length; i++) {
-        console.log("Hola, soy " + array8[i].nombre + " tengo " + array8[i].edad + " años, soy " + array8[i].relacion + " y trabajo como " + array8[i].ocupacion);
-    }
+for (let i = 0; i < array8.length; i++) {
+    console.log("Hola, soy " + array8[i].nombre + " tengo " + array8[i].edad + " años, soy " + array8[i].relacion + " y trabajo como " + array8[i].ocupacion);
 }
-familia(array8)
-
 
 //Ejercicio 9
 let array9 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-function impares(array9) {
-    console.log("Numeros Impares: ");
-    for (let i = 0; i < array9.length; i++) {
-        if (array9[i] % 2 !== 0) {
-            console.log(array9[i]);
-        }
+console.log("Numeros Impares: ");
+for (let i = 0; i < array9.length; i++) {
+    if (array9[i] % 2 !== 0) {
+        console.log(array9[i]);
     }
 }
-impares(array9)
 
 //Ejercicio 10
-function sumaDeParesEImpares() {
-    let pares = 0;
-    let impares = 0;
-    while (true) {
-        let numero = parseInt(prompt("ingresa un numero, o usa el 0 para terminar"));
-        if (numero == 0) {
-            break;
-        }
-        if (numero % 2 === 0) {
-            pares += numero;
-        } else {
-            impares += numero;
-        }
+let pares = 0;
+let impares = 0;
+while (true) {
+    let numero = parseInt(prompt("ingresa un numero, o usa el 0 para terminar"));
+    if (numero == 0) {
+        break;
     }
-    console.log("la suma de los numeros pares es:" + pares);
-    console.log("la suma de los numeros impares es:" + impares);
+    if (numero % 2 === 0) {
+        pares += numero;
+    } else {
+        impares += numero;
+    }
 }
-sumaDeParesEImpares();
+console.log("la suma de los numeros pares es:" + pares);
+console.log("la suma de los numeros impares es:" + impares);
 
 //Ejercicio 11
 let array11 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+let numeroGrande = array11[0];
 
-function functionGrande(array11) {
-    let numeroGrande = array11[0];
-
-    for (let i = 1; i < array11.length; i++) {
-        if (array11[i] > numeroGrande) {
-            numeroGrande = array11[i]
-        }
+for (let i = 1; i < array11.length; i++) {
+    if (array11[i] > numeroGrande) {
+        numeroGrande = array11[i]
     }
-    return numeroGrande;
 }
-console.log("el numero mas grande es:", functionGrande(array11));
+console.log("el numero mas grande es:", numeroGrande);
 
 //Ejercicio 12
 let array12 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+let numeroChico = array12[0];
 
-function functionChico(array12) {
-    let numeroChico = array12[0];
-
-    for (let i = 1; i < array12.length; i++) {
-        if (array12[i] < numeroChico) {
-            numeroChico = array12[i]
-        }
+for (let i = 1; i < array12.length; i++) {
+    if (array12[i] < numeroChico) {
+        numeroChico = array12[i]
     }
-    return numeroChico;
 }
-console.log("el numero mas chico es:", functionChico(array12));
+console.log("el numero mas chico es:", numeroChico);
 
 //Ejercicio 13
+let jugador1 = prompt("Nombre del Jugador 1");
+let jugador2 = prompt("Nombre del Jugador 2");
+let continuar = true;
 
-function functionJuego() {
-    let jugador1 = prompt("Nombre del Jugador 1");
-    let jugador2 = prompt("Nombre del Jugador 2");
+while (continuar) {
+    let jugadaJugador1 = obtenerJugada(jugador1);
+    let jugadaJugador2 = obtenerJugada(jugador2);
 
-    let continuar = true;
-
-    while (continuar) {
-        let jugadaJugador1 = obtenerJugada(jugador1);
-        let jugadaJugador2 = obtenerJugada(jugador2);
-
-        let ganador = determinarGanador(jugadaJugador1, jugadaJugador2);
-        if (ganador === "empate") {
-            console.log("empate, intentelo de nuevo");
-        } else {
-            console.log(ganador + " gana el juego");
-            continuar = false;
-        }
-    }
-    function determinarGanador(jugadaJugador1, jugadaJugador2) {
-        if (jugadaJugador1 === jugadaJugador2) {
-            return "empate";
-        } else if (
-            (jugadaJugador1 === "piedra" && jugadaJugador2 === "tijera") ||
-            (jugadaJugador1 === "papel" && jugadaJugador2 === "piedra") ||
-            (jugadaJugador1 === "tijera" && jugadaJugador2 === "papel")
-        ) {
-            return jugador1;
-        } else {
-            return jugador2;
-        }
-    }
-    function obtenerJugada(nombreJugador) {
-        let jugada = prompt(nombreJugador + " piedra, papel o tijera?");
-        return jugada;
+    let ganador = determinarGanador(jugadaJugador1, jugadaJugador2);
+    if (ganador === "empate") {
+        console.log("empate, intentelo de nuevo");
+    } else {
+        console.log(ganador + " gana el juego");
+        continuar = false;
     }
 }
-functionJuego();
+function determinarGanador(jugadaJugador1, jugadaJugador2) {
+    if (jugadaJugador1 === jugadaJugador2) {
+        return "empate";
+    } else if (
+        (jugadaJugador1 === "piedra" && jugadaJugador2 === "tijera") ||
+        (jugadaJugador1 === "papel" && jugadaJugador2 === "piedra") ||
+        (jugadaJugador1 === "tijera" && jugadaJugador2 === "papel")
+    ) {
+        return jugador1;
+    } else {
+        return jugador2;
+    }
+}
+function obtenerJugada(nombreJugador) {
+    let jugada = prompt(nombreJugador + " piedra, papel o tijera?");
+    return jugada;
+}
 
 //Ejercicio 14
-function function14() {
-    for (let i = 0; i < 6; i++) {
-        let fila = "";
-        for (let j = 1; j <= i; j++) {
-            fila += "* "
-        }
-        console.log(fila);
+for (let i = 0; i < 6; i++) {
+    let fila = "";
+    for (let j = 1; j <= i; j++) {
+        fila += "* "
     }
+    console.log(fila);
 }
-function14();
 
 //Ejercicio 15
-function function15() {
-    for (let i = 5; i >= 1; i--) {
-        let fila = "";
-        for (let j = 1; j <= i; j++) {
-            fila += "* ";
-        }
-        console.log(fila);
+
+for (let i = 5; i >= 1; i--) {
+    let fila = "";
+    for (let j = 1; j <= i; j++) {
+        fila += "* ";
     }
+    console.log(fila);
 }
-function15();
 
 //Ejecicio 16 y ultimo :))
 let array16 = [7, 3, 1, 9, 4, 6, 2, 8, 5, 10];
-
-function ordenarArray(array16) {
-    let longitud = array16.length;
-    for (let i = 0; i < longitud - 1; i++) {
-        for (let j = 0; j < longitud - 1 - i; j++) {
-            if (array16[j] > array16[j + 1]) {
-                let temp = array16[j];
-                array16[j] = array16[j + 1];
-                array16[j + 1] = temp;
-            }
+let longitud = array16.length;
+for (let i = 0; i < longitud - 1; i++) {
+    for (let j = 0; j < longitud - 1 - i; j++) {
+        if (array16[j] > array16[j + 1]) {
+            let temp = array16[j];
+            array16[j] = array16[j + 1];
+            array16[j + 1] = temp;
         }
     }
 }
-ordenarArray(array16);
 console.log("array ordenado:", array16);
