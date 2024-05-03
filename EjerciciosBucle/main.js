@@ -174,9 +174,9 @@ function obtenerJugada(nombreJugador) {
 }
 
 //Ejercicio 14
-for (let i = 0; i < 6; i++) {
+for (let i = 0; i < 5; i++) {
     let fila = "";
-    for (let j = 1; j <= i; j++) {
+    for (let j = 0; j <= i; j++) {
         fila += "* "
     }
     console.log(fila);
@@ -184,9 +184,9 @@ for (let i = 0; i < 6; i++) {
 
 //Ejercicio 15
 
-for (let i = 5; i >= 1; i--) {
+for (let i = 4; i >= 0; i--) {
     let fila = "";
-    for (let j = 1; j <= i; j++) {
+    for (let j = 0; j <= i; j++) {
         fila += "* ";
     }
     console.log(fila);
